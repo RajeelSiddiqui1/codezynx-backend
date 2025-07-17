@@ -114,7 +114,7 @@ app.use(cookieParser());
 
 const router = app.Router();
 
-router.get('/',(req,res)=>{
+router.get('/check',(req,res)=>{
   res.send('hello world')
 }
   )
