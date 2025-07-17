@@ -6,14 +6,14 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
 
-import authRoutes from "./routes/auth.route.js";
-import userRoutes from "./routes/user.route.js";
-import chatRoutes from "./routes/chat.route.js";
-import postRoutes from "./routes/post.route.js";
-import aiRoutes from "./routes/ai.route.js";
+import authRoutes from "./src/routes/auth.route.js";
+import userRoutes from "./src/routes/user.route.js";
+import chatRoutes from "./src/routes/chat.route.js";
+import postRoutes from "./src/routes/post.route.js";
+import aiRoutes from "./src/routes/ai.route.js";
 
-import { setSocketIOInstance } from "./controllers/post.controller.js";
-import { connectDB } from "./lib/db.js";
+import { setSocketIOInstance } from "./src/controllers/post.controller.js";
+import { connectDB } from "./src/lib/db.js";
 
 const app = express();
 const server = http.createServer(app);
