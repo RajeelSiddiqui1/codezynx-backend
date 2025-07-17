@@ -14,6 +14,7 @@ import aiRoutes from "./src/routes/ai.route.js";
 
 import { setSocketIOInstance } from "./src/controllers/post.controller.js";
 import { connectDB } from "./src/lib/db.js";
+import { error } from "console";
 
 const app = express();
 const server = http.createServer(app);
@@ -69,6 +70,13 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
   });
 }
+
+app.get('/',(req,res)=>{
+  res.send({
+    activeStatus:true,
+    error:false
+  })
+})
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
