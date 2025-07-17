@@ -112,6 +112,12 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+const router = app.Router();
+
+router.get('/',(req,res)=>{
+  res.send('hello world')
+}
+  )
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
