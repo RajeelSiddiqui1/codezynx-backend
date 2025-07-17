@@ -72,11 +72,15 @@ const app = express();
 const server = http.createServer(app); 
 const io = new Server(server, {
   cors: {
-    origin: "https://codezynx.netlify.app",
+    origin: [
+      "http://localhost:5173",
+      "https://codezynx.netlify.app",
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
+
 
 // ✅ Register socket events
 io.on("connection", (socket) => {
